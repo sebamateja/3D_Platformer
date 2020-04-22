@@ -5,15 +5,14 @@ using UnityEngine;
 public class ThirdPersonController : MonoBehaviour
 {
     public Transform lookAt;
-    public Transform camTransform;
+    public float RotationSpeed = 2.0f;
 
+    private Transform camTransform;
     private Camera cam;
 
     private float distance = 10.0f;
     private float currentX = 0.0f;
     private float currentY = 0.0f;
-    private float sensX = 4.0f;
-    private float sensY = 1.0f;
 
     private void Start()
     {
@@ -26,8 +25,10 @@ public class ThirdPersonController : MonoBehaviour
 
     private void Update()
     {
-        currentX += Input.GetAxis("Mouse X");
-        currentY -= Input.GetAxis("Mouse Y");
+        currentX += Input.GetAxis("Mouse X") * RotationSpeed;
+        currentY -= Input.GetAxis("Mouse Y") * RotationSpeed;
+
+        currentY = Mathf.Clamp(currentY, -35, 60);
     }
 
     private void LateUpdate()
