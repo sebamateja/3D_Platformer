@@ -2,6 +2,13 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+3D_Platformer/[Ll]ibrary/
+3D_Platformer/[Tt]emp/
+3D_Platformer/[Oo]bj/
+3D_Platformer/[Bb]uild/
+3D_Platformer/[Bb]uilds/
+3D_Platformer/[Ll]ogs/
+3D_Platformer/[Mm]emoryCaptures/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
@@ -10,8 +17,12 @@
 /[Ll]ogs/
 /[Mm]emoryCaptures/
 
+
 # Asset meta data should only be ignored when the corresponding asset is also ignored
+!3D_Platformer/[Aa]ssets/**/*.meta
 !/[Aa]ssets/**/*.meta
+!3D_Platformer/[Aa]ssets/**/**/*.meta
+!/[Aa]ssets/**/**/*.meta
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
 # /[Aa]ssets/AssetStoreTools*
